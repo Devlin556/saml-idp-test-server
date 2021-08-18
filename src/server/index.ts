@@ -27,6 +27,8 @@ export interface SamlIdpMockServerOptions {
 	cert: string;
 	key: string;
 	config: SamlIdpMockServerConfig
+  port?: number
+  host?: string
   https?: boolean
   httpsPrivateKey?: string
   httpsCert?: string
@@ -123,7 +125,7 @@ export const runServer = (options: SamlIdpMockServerOptions) => {
 
   configureRoutes({ app, argv: idpOptions, hbsBlocks: blocks, idpOptions })
 
-  httpServer.listen(app.get('port'), function() {
+  httpServer.listen(options.port || 7000, options.host || '127.0.0.1', function() {
     const scheme = options.https ? 'https' : 'http';
     const { address, port } = httpServer.address() as any;
     const hostname = WILDCARD_ADDRESSES.includes(address) ? os.hostname() : 'localhost';
