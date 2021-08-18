@@ -123,9 +123,8 @@ export const runServer = (options: SamlIdpMockServerOptions) => {
 
   configureRoutes({ app, argv: idpOptions, hbsBlocks: blocks, idpOptions })
 
-  console.log(chalk`Starting IdP server on port {cyan ${app.get('host')}:${app.get('port')}}...\n`);
-
   httpServer.listen(app.get('port'), app.get('host'), function() {
+    console.log(chalk`Starting IdP server on port {cyan ${app.get('host')}:${app.get('port')}}...\n`);
     const scheme = options.https ? 'https' : 'http';
     const { address, port } = httpServer.address() as any;
     const hostname = WILDCARD_ADDRESSES.includes(address) ? os.hostname() : 'localhost';
