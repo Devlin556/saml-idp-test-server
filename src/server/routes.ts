@@ -22,7 +22,7 @@ interface ConfigureRoutesOptions {
 export const configureRoutes = ({ app, argv, hbsBlocks, idpOptions } : ConfigureRoutesOptions) => {
   app.set('host', process.env.HOST || argv.host);
   app.set('port', process.env.PORT || argv.port);
-  app.set('views', path.join(__dirname, '../views'));
+  app.set('views', path.join(__dirname, '../../views'));
 
   app.set('view engine', 'hbs');
   app.set('view options', { layout: 'layout' })
