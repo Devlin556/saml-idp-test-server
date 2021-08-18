@@ -123,7 +123,7 @@ export const runServer = (options: SamlIdpMockServerOptions) => {
     }
   }
 
-  configureRoutes({ app, argv: idpOptions, hbsBlocks: blocks, idpOptions })
+  configureRoutes({ app, argv: options, hbsBlocks: blocks, idpOptions })
 
   httpServer.listen(options.port || 7000, options.host || '127.0.0.1', function() {
     const scheme = options.https ? 'https' : 'http';
