@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "es5",                       
+    "lib": ["esnext"],
+    "declaration": true,    
+    "noImplicitAny": true,
+    "downlevelIteration": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",       
+    "rootDir": "src",
+    "allowJs": true,
+    "outDir": "lib",
+    "module": "commonjs",
+    "typeRoots": ["node_modules/@types"],
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "strictNullChecks": true,            
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+  ]
+}
