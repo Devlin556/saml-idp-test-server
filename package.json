@@ -4,7 +4,8 @@
   "description": "",
   "main": "./lib/index.js",
   "files": [
-    "/lib"
+    "/lib",
+    "/views"
   ],
   "scripts": {
     "alpha": "yarn run build && npm version prerelease --preid=\"alpha\" && npm publish --tag alpha",
