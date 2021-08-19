@@ -131,11 +131,7 @@ export const runServer = (options: SamlIdpMockServerOptions) => {
     const hostname = WILDCARD_ADDRESSES.includes(address) ? os.hostname() : 'localhost';
     const baseUrl = `${scheme}://${hostname}:${port}`;
 
-    console.log(dedent(chalk`
-      IdP Metadata URL:
-        {cyan ${baseUrl}${IDP_PATHS.METADATA}}
-    `))
-  });
+    console.log(dedent(chalk`\nIdP Metadata URL: {cyan ${baseUrl}${IDP_PATHS.METADATA}}`))});
 
   return httpServer
 }
